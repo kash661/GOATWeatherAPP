@@ -25,6 +25,7 @@
 		AE93AAC427F128D50095C270 /* DailyWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE93AAC327F128D50095C270 /* DailyWeather.swift */; };
 		AE93AAC627F128F60095C270 /* WeatherDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE93AAC527F128F60095C270 /* WeatherDetails.swift */; };
 		AE93AAC827F129110095C270 /* Temp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE93AAC727F129110095C270 /* Temp.swift */; };
+		AE93AACA27F12A930095C270 /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE93AAC927F12A930095C270 /* WeatherService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		AE93AAC327F128D50095C270 /* DailyWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyWeather.swift; sourceTree = "<group>"; };
 		AE93AAC527F128F60095C270 /* WeatherDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDetails.swift; sourceTree = "<group>"; };
 		AE93AAC727F129110095C270 /* Temp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Temp.swift; sourceTree = "<group>"; };
+		AE93AAC927F12A930095C270 /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +143,7 @@
 		AE93AAAB27F123BD0095C270 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				AE93AAC927F12A930095C270 /* WeatherService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -238,6 +241,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE93AACA27F12A930095C270 /* WeatherService.swift in Sources */,
 				AE93AA9527F1234D0095C270 /* MainWeatherViewController.swift in Sources */,
 				AE93AAB727F126F10095C270 /* APIRequest.swift in Sources */,
 				AE93AAC827F129110095C270 /* Temp.swift in Sources */,

@@ -26,6 +26,8 @@
 		AE93AAC627F128F60095C270 /* WeatherDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE93AAC527F128F60095C270 /* WeatherDetails.swift */; };
 		AE93AAC827F129110095C270 /* Temp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE93AAC727F129110095C270 /* Temp.swift */; };
 		AE93AACA27F12A930095C270 /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE93AAC927F12A930095C270 /* WeatherService.swift */; };
+		AE93AACC27F130E80095C270 /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE93AACB27F130E80095C270 /* WeatherViewModel.swift */; };
+		AE93AACE27F131080095C270 /* WeatherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE93AACD27F131080095C270 /* WeatherTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +52,8 @@
 		AE93AAC527F128F60095C270 /* WeatherDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDetails.swift; sourceTree = "<group>"; };
 		AE93AAC727F129110095C270 /* Temp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Temp.swift; sourceTree = "<group>"; };
 		AE93AAC927F12A930095C270 /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
+		AE93AACB27F130E80095C270 /* WeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModel.swift; sourceTree = "<group>"; };
+		AE93AACD27F131080095C270 /* WeatherTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +114,7 @@
 		AE93AAA627F1238E0095C270 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				AE93AACB27F130E80095C270 /* WeatherViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -129,6 +134,7 @@
 		AE93AAA827F1239E0095C270 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				AE93AACD27F131080095C270 /* WeatherTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -247,11 +253,13 @@
 				AE93AAC827F129110095C270 /* Temp.swift in Sources */,
 				AE93AAB327F126580095C270 /* APIInfoLoader.swift in Sources */,
 				AE93AABA27F127490095C270 /* APIClient.swift in Sources */,
+				AE93AACE27F131080095C270 /* WeatherTableViewCell.swift in Sources */,
 				AE93AAC427F128D50095C270 /* DailyWeather.swift in Sources */,
 				AE93AABC27F127C80095C270 /* CurrentLocationRoute.swift in Sources */,
 				AE93AAAF27F125AE0095C270 /* APIError.swift in Sources */,
 				AE93AAC627F128F60095C270 /* WeatherDetails.swift in Sources */,
 				AE93AAC027F128150095C270 /* UserCoordinates.swift in Sources */,
+				AE93AACC27F130E80095C270 /* WeatherViewModel.swift in Sources */,
 				AE93AAC227F128B50095C270 /* WeatherResponse.swift in Sources */,
 				AE93AABE27F127E90095C270 /* IconsRoute.swift in Sources */,
 				AE93AA9127F1234D0095C270 /* AppDelegate.swift in Sources */,

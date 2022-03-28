@@ -15,7 +15,7 @@ class WeatherDetailViewController: UIViewController {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .systemFont(ofSize: 14)
-        label.textColor = .gray
+        label.textColor = .systemGray
         return label
     }()
     
@@ -39,7 +39,7 @@ class WeatherDetailViewController: UIViewController {
 
 private extension WeatherDetailViewController {
     func setupView() {
-        view.backgroundColor = .white
+        view.backgroundColor = .systemBackground
         view.addSubview(weatherDescription)
         
         NSLayoutConstraint.activate([

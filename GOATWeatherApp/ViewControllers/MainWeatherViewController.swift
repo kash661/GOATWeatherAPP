@@ -67,6 +67,12 @@ private extension MainWeatherViewController {
                 self.tableView.reloadData()
             }
         }
+        
+        viewModel.locationButtonTappedHandler = { [weak self] in
+            guard let self = self else { return }
+            self.locationManager?.stopUpdatingLocation()
+            self.viewModel.disableLocationButton = true
+        }
     }
     
     func configureLocationManager() {
@@ -75,11 +81,13 @@ private extension MainWeatherViewController {
     }
     
     @objc func locationButtonTapped() {
-        locationManager?.requestAlwaysAuthorization()
-        locationManager?.startUpdatingLocation()
-        if let location = locationManager?.location {
-            let coordinates = UserCoordinates(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
-            viewModel.userCoordinates = coordinates
+        if !viewModel.disableLocationButton {
+            locationManager?.requestAlwaysAuthorization()
+            locationManager?.startUpdatingLocation()
+            if let location = locationManager?.location {
+                let coordinates = UserCoordinates(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+                viewModel.userCoordinates = coordinates
+            }
         }
     }
 }
@@ -113,5 +121,3 @@ extension MainWeatherViewController: CLLocationManagerDelegate {
         }
     }
 }
-
-

@@ -25,12 +25,15 @@ class WeatherViewModel {
         didSet {
             fetchWeatherData(latitude: userCoordinates?.latitude ?? -20, longitude: userCoordinates?.longitude ?? -25)
             reloadTableView?()
+            locationButtonTappedHandler?()
         }
     }
     
     //    var isLoading: Bool = false -> this would be used to controller an activity view controller to indicate loading
     let weatherService: WeatherService
+    var disableLocationButton: Bool = false
     var reloadTableView: (() -> Void)?
+    var locationButtonTappedHandler: (() -> Void)?
     
     // MARK: - Init
     init(weatherService: WeatherService = WeatherService()) {

@@ -28,6 +28,7 @@
 		AE93AACA27F12A930095C270 /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE93AAC927F12A930095C270 /* WeatherService.swift */; };
 		AE93AACC27F130E80095C270 /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE93AACB27F130E80095C270 /* WeatherViewModel.swift */; };
 		AE93AACE27F131080095C270 /* WeatherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE93AACD27F131080095C270 /* WeatherTableViewCell.swift */; };
+		AE93AAD027F134D50095C270 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE93AACF27F134D50095C270 /* Date+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 		AE93AAC927F12A930095C270 /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
 		AE93AACB27F130E80095C270 /* WeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModel.swift; sourceTree = "<group>"; };
 		AE93AACD27F131080095C270 /* WeatherTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherTableViewCell.swift; sourceTree = "<group>"; };
+		AE93AACF27F134D50095C270 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +144,7 @@
 		AE93AAAA27F123B50095C270 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				AE93AACF27F134D50095C270 /* Date+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -256,6 +259,7 @@
 				AE93AACE27F131080095C270 /* WeatherTableViewCell.swift in Sources */,
 				AE93AAC427F128D50095C270 /* DailyWeather.swift in Sources */,
 				AE93AABC27F127C80095C270 /* CurrentLocationRoute.swift in Sources */,
+				AE93AAD027F134D50095C270 /* Date+Extensions.swift in Sources */,
 				AE93AAAF27F125AE0095C270 /* APIError.swift in Sources */,
 				AE93AAC627F128F60095C270 /* WeatherDetails.swift in Sources */,
 				AE93AAC027F128150095C270 /* UserCoordinates.swift in Sources */,

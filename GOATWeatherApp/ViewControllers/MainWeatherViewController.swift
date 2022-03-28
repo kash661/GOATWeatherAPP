@@ -23,7 +23,7 @@ class MainWeatherViewController: UIViewController {
         return tableView
     }()
     
-    private let locationManager = CLLocationManager()
+    private var locationManager: CLLocationManager?
     
     init(viewModel: WeatherViewModel) {
         self.viewModel = viewModel
@@ -59,29 +59,58 @@ private extension MainWeatherViewController {
     }
     
     func initViewModel() {
-        
+        viewModel.fetchWeatherData(latitude: viewModel.userCoordinates?.latitude ?? -25, longitude: viewModel.userCoordinates?.longitude ?? -65) // was unclear of what to do if user says no, so i just put default coords
+        viewModel.reloadTableView = { [weak self] in
+            guard let self = self else { return }
+            
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
     }
     
     func configureLocationManager() {
-        
+        locationManager = CLLocationManager()
+        locationManager?.delegate = self
     }
     
     @objc func locationButtonTapped() {
-        
+        locationManager?.requestAlwaysAuthorization()
+        locationManager?.startUpdatingLocation()
+        if let location = locationManager?.location {
+            let coordinates = UserCoordinates(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+            viewModel.userCoordinates = coordinates
+        }
     }
 }
 
 extension MainWeatherViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        5
+        viewModel.dailyWeatherCellPresentation.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-      guard let cell = tableView.dequeueReusableCell(withIdentifier: "weatherCell", for: indexPath) as? WeatherTableViewCell else {
-          return UITableViewCell(style: .default, reuseIdentifier: "DefaultCell")
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "weatherCell", for: indexPath) as? WeatherTableViewCell else {
+            return UITableViewCell(style: .default, reuseIdentifier: "DefaultCell")
         }
         
+        let presentation = viewModel.fetchCellData(at: indexPath)
+        cell.presentation = presentation
         return cell
+    }
+}
+
+extension MainWeatherViewController: CLLocationManagerDelegate {
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if let location = locations.last {
+            viewModel.userCoordinates = UserCoordinates(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+            viewModel.fetchCityAndCountry(from: location) { city, error in
+                if let error = error {
+                    print(error) // title would stay weather
+                }
+                self.title = city ?? "Weather"
+            }
+        }
     }
 }
 

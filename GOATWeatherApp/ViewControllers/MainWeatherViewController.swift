@@ -106,6 +106,15 @@ extension MainWeatherViewController: UITableViewDelegate, UITableViewDataSource 
         cell.presentation = presentation
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: false)
+        if let weatherDescriptionData = viewModel.dailyWeatherCellPresentation[indexPath.row].weatherDetails {
+            let weatherDetailViewModel = WeatherDetailViewModel(weatherDescriptionData: weatherDescriptionData)
+            let weatherDetailsViewController = WeatherDetailViewController(viewModel: weatherDetailViewModel)
+            navigationController?.pushViewController(weatherDetailsViewController, animated: true)
+        }
+    }
 }
 
 extension MainWeatherViewController: CLLocationManagerDelegate {
